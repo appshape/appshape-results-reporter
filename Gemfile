@@ -4,9 +4,10 @@ gem 'beaneater'
 gem 'dotenv'
 gem 'pg'
 gem 'json'
+gem 'logging'
 
 group :development do
-  gem 'byebug'
+  gem 'pry-remote'
 end
 
 group :test do

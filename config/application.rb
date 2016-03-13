@@ -1,11 +1,13 @@
+ENV['APPLICATION_ENV'] ||= 'development'
+
 require 'bundler'
-Bundler.require
+Bundler.require(:default, ENV['APPLICATION_ENV'])
 
 require 'time'
 
-ENV['RESULTS_REPORTER_ENV'] ||= 'development'
+Dotenv.load
 
-Dotenv.load(".env.#{ENV['RESULTS_REPORTER_ENV']}")
+load File.expand_path('../../app/logger.rb', __FILE__)
 
 #models
 load File.expand_path('../../app/models/test_run_result.rb', __FILE__)

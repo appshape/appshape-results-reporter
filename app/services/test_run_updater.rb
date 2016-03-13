@@ -1,4 +1,14 @@
 class TestRunUpdater
+  def initialize(test_run_id)
+    @test_run_id = test_run_id
+  end
+
+  def update(results)
+    results.each do |result|
+      update_test_run_with_results(TestRunResult.from_json(result))
+    end
+  end
+
   def update_test_run_with_results(test_run_result)
     DatabaseConnection.instance.connection.query(query, parameters(test_run_result))
   end

@@ -2,22 +2,37 @@ GEM
   remote: https://rubygems.org/
   specs:
     beaneater (1.0.0)
-    byebug (8.2.1)
+    coderay (1.1.1)
     dotenv (2.0.2)
     json (1.8.1)
+    little-plugger (1.1.4)
+    logging (2.0.0)
+      little-plugger (~> 1.1)
+      multi_json (~> 1.10)
+    method_source (0.8.2)
     minitest (5.8.3)
+    multi_json (1.11.2)
     pg (0.18.4)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-remote (0.1.8)
+      pry (~> 0.9)
+      slop (~> 3.0)
+    slop (3.6.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   beaneater
-  byebug
   dotenv
   json
+  logging
   minitest
   pg
+  pry-remote
 
 BUNDLED WITH
    1.10.6
