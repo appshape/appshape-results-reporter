@@ -38,7 +38,7 @@ class TestRunUpdater
         test_run_result.failed_assertions.to_json,
         test_run_result.response_body_file_path,
         test_run_result.executed_at,
-        test_run_result.id
+        @test_run_id
     ]
   end
 end
