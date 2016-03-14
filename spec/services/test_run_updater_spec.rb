@@ -6,7 +6,6 @@ describe TestRunUpdater do
 
     before do
       @test_run_result = TestRunResult.new.tap do |object|
-        object.id = 1
         object.result = false
         object.failed_assertions = [{'source_code' => 'test_field'}]
         object.response_body_file_path = 'some_file.txt'
@@ -15,7 +14,7 @@ describe TestRunUpdater do
     end
 
     it 'updates database entry with given data' do
-      TestRunUpdater.new.update_test_run_with_results(@test_run_result)
+      TestRunUpdater.new(1).update_test_run_with_results(@test_run_result)
 
       row = DatabaseHelpers.select_test_run(@test_run_result.id)
 

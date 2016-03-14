@@ -4,7 +4,6 @@ require "#{File.dirname(__FILE__)}/config/application.rb"
 
 Logger.instance.debug "results queue url #{ENV['BEANSTALKD_URL']}"
 
-
 @beanstalk.jobs.register('test-results') do |job|
   data = JSON.parse(job.body)
 
